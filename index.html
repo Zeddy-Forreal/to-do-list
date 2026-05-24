@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>To-Do List</title>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="style/FontAwesome_Icons/all.min.css">
-    <link rel="stylesheet" href="style/FontAwesome_Icons/fontawesome.min.css">
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="static/Font/font.css">
-    <link rel="icon" href="static/ST_brand/icon.png">
+  <title>To-Do-List</title>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="icon" href="static/icon.png">
 </head>
-<body>
 
-    <div class="title">
-        <a href="#" class="logo">Qiyani.me</a>
-        <button class="mode"><i class="fa-solid fa-sun"></i></button>
-    </div>
-    <div class="container">
-        <header>
-            <input type="text" class="input" placeholder="create new task..">
-            <button class="add">Add</button>
-        </header>
-        <div class="body">
-            <div class="missions">
-                        
-            </div>
-            <footer>
-                <p class="numberoftasks"><span>0</span> Tasks</p>
-                <div class="buttons">
-                    <button class="but all clicked">All</button>
-                    <button class="but active">Active</button>
-                    <button class="but completed">Completed</button>
-                </div>
-                <button class="removeall">Clear Completed</button>
-            </footer>
+<body>
+  <div class="shell">
+
+    <div class="top-bar">
+      <div class="brand-row">
+        <div class="brand">
+          <div class="brand-dot"></div>
+          <span class="brand-label">Tasks</span>
         </div>
-        
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="2" x2="12" y2="4"/>
+            <line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/>
+            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
+            <line x1="2" y1="12" x2="4" y2="12"/>
+            <line x1="20" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/>
+            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="input-row">
+        <input
+          class="input-field"
+          id="taskInput"
+          type="text"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+        />
+        <button class="add-btn" id="addBtn">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add
+        </button>
+      </div>
     </div>
-<script src="javascript/main.js"></script>
+
+    <div class="filters">
+      <button class="filter-btn on" data-f="all">All</button>
+      <button class="filter-btn" data-f="active">Active</button>
+      <button class="filter-btn" data-f="done">Completed</button>
+    </div>
+
+    <div class="task-scroll" id="taskScroll">
+      <div class="empty" id="emptyState">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="3"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <p>Nothing here yet</p>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <span class="count-label"><span id="countNum">0</span> remaining</span>
+      <button class="clear-btn" id="clearBtn">Clear completed</button>
+    </div>
+
+  </div>
 </body>
-</html>
+
+<script src="script/main.js">
+
+</script>
